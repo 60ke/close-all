@@ -27,12 +27,6 @@ Alternatively:
 2. Select **Open**.
 3. Click **Open** again in the warning dialog.
 
-## Distribution
-To distribute the app:
-1. Run `./build.sh` to generate the DMG in the `build/` folder.
-2. Create a new [Release](https://github.com/60ke/close-all/releases/new) on GitHub.
-3. Upload `build/CloseAll-1.0.0.dmg` as an asset to the release.
-
 ## Build from source
 Run the build script to generate a DMG:
 ```bash
