@@ -12,12 +12,17 @@ echo "Cleaning up..."
 rm -rf build/
 mkdir -p "${STAGING_DIR}"
 
-# Copy App to staging
-echo "Preparing staging directory..."
-cp -R "${APP_PATH}" "${STAGING_DIR}/"
-
-# Create DMG
-echo "Creating DMG..."
-hdiutil create -volname "${APP_NAME}" -srcfolder "${STAGING_DIR}" -ov -format UDZO "build/${DMG_NAME}"
+# Create the DMG using create-dmg
+echo "Creating professional DMG..."
+create-dmg \
+  --volname "${APP_NAME}" \
+  --window-pos 200 120 \
+  --window-size 600 400 \
+  --icon-size 100 \
+  --icon "${APP_NAME}.app" 175 190 \
+  --hide-extension "${APP_NAME}.app" \
+  --app-drop-link 425 190 \
+  "build/${DMG_NAME}" \
+  "${APP_PATH}"
 
 echo "Build complete: build/${DMG_NAME}"

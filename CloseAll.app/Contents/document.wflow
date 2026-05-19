@@ -49,7 +49,7 @@
 				<key>ActionBundlePath</key>
 				<string>/System/Library/Automator/Quit All Applications.action</string>
 				<key>ActionName</key>
-				<string>退出所有应用程序</string>
+				<string>Quit All Applications</string>
 				<key>ActionParameters</key>
 				<dict>
 					<key>appException</key>
