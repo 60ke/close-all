@@ -16,6 +16,10 @@ mkdir -p build/
 echo "Cleaning extended attributes..."
 xattr -cr "${APP_PATH}"
 
+# Re-sign the app ad-hoc to fix "damaged" error
+echo "Re-signing the app ad-hoc..."
+codesign --force --deep --sign - "${APP_PATH}"
+
 # Create the DMG using create-dmg
 echo "Creating professional DMG..."
 create-dmg \
