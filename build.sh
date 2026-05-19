@@ -10,7 +10,11 @@ STAGING_DIR="build/staging"
 # Clean up previous builds
 echo "Cleaning up..."
 rm -rf build/
-mkdir -p "${STAGING_DIR}"
+mkdir -p build/
+
+# Strip extended attributes to prevent "damaged" errors
+echo "Cleaning extended attributes..."
+xattr -cr "${APP_PATH}"
 
 # Create the DMG using create-dmg
 echo "Creating professional DMG..."
